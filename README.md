@@ -13,4 +13,6 @@ INPUT AND OUTPUT :
 - The player has to give his/her choice - R/S/P and the conditions are checked and points are given accordingly.
 - At the end of the game, Player with maximum number of points wins the game.
 
+# WEBSITE BASED<BR>
+
   
