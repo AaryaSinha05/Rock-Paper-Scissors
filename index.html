@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock - Paper - Scissors</title>
+        <link rel="shortcut icon" href="./rock-paper-scissors.png" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    </head>
+
+    <body>
+
+        <header id="header">
+            <center><h1 id="heading">Hello world! Let's play ROCK - PAPER - SCISSORS</h1></center>
+            <hr> 
+        </header>
+
+        <div class="main-content">
+
+            <div class="scores" id="player">
+                <p>Your Score</p><br>
+                <p><center>0</center></p>
+            </div>
+
+            <div class="play-area">
+                <div class="images">
+                    <div id="image">
+                        <img src="rock.png" alt="Rock">
+                    </div>
+                    <div id="image">
+                        <img src="rock-inverted.png" alt="rock_inverted">
+                    </div>
+                </div>
+                <div class="comments">
+                    <p> START ! </p>
+                </div>
+            </div>
+
+            <div class="scores" id="ai-player">
+                <p>AI Player's Score</p><br>
+                <p><center>0</center></p>
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+            <div id="move-comment">
+                <p><center> Play your move ! </center></p>
+            </div>
+
+            <div class="choices">
+
+                <div class="choice" id="rock">
+                    <img src="rock.png" alt="rock">
+                </div>
+                <div class="choice" id="paper">
+                    <img src="paper.png" alt="paper">
+                </div>
+                <div class="choice" id="scissors">
+                    <img src="scissors.png" alt="scissors">
+                </div>
+            
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
