@@ -23,14 +23,14 @@ FEATURES :
 
 USAGE :
 
-Open the `index.html` file in a web browser:
+- Open the `index.html` file in a web browser:
 Simply double-click the index.html file or drag it into a browser window.
 
-Play the Game:
+- Play the Game:
 Click on one of the buttons (Rock, Paper, or Scissors) to make your choice.
 The computer will make its choice and the result of the round will be displayed.
 
-Score Tracking:
+- Score Tracking:
 The score will be updated after each round.
 
 CODE OVERVIEW :
