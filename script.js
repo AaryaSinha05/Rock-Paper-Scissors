@@ -9,42 +9,84 @@ var AIplayerScore = 0;
 //function AI player's random choice 
 function AIPlayersChoice(){
     const options = ['rock', 'paper', 'scissors'];
-
     //random no. between 0 - 3 (3 not included)
     let index = Math.floor(Math.random()*3);
     return options[index]
+
 }
 
-function drawMatch(){
-    console.log("draw");
+function imageChange(userChoice, computerChoice) {
+
+    //function for changing the images in the play area (use querySelector - change in tags)
+    const imageContainer = document.querySelector('.images');
+    imageContainer.innerHTML = `
+            <div id="image">
+                <img src="${userChoice}.png" alt="${userChoice}">
+            </div>
+            <div id="image-inverted">
+                <img src="${computerChoice}-inverted.png" alt="${computerChoice}_inverted">
+            </div>
+        `;
+
 }
 
-function displayLoseOrWin(Win){
-    if(Win == true){
-        console.log("you win");
-    }else{
-        console.log("you lose");
+function displayLoseOrWinOrDraw(result){
+
+    if(result == true){
+        var text = "GREAT ! You Win!";
+        var color = 'green';
+        playerScore += 1;
+
+    }else if (result == false){
+        var text = "You lose. It's okay - try again";
+        var color = 'red';
+        AIplayerScore += 1;
+
+    }else {
+        var text = "Game was Draw. Play again."
+        var color = 'white';
+
     }
+
+    //changing the comments
+    const comments = document.getElementById('paraClass');
+    comments.innerHTML = text;
+    comments.style.color = color;
+    comments.style.borderColor = color;
+
+    //changing the scores
+    const playerScoreUpdate = document.getElementById('player');
+    playerScoreUpdate.innerHTML = playerScore;
+    const aiplayerScoreUpdate = document.getElementById('ai-player');
+    aiplayerScoreUpdate.innerHTML = AIplayerScore;
+
+
 }
 
 function playGame(userChoice){
+    //play game function
     let computerChoice = AIPlayersChoice();
     console.log(userChoice,computerChoice);
+    
 
+    var result;
     if (userChoice == computerChoice){
-        return drawMatch();
+        result = null;//returns none if draw
+
     }else{
-        var Win = true;
+
         if (userChoice == 'rock'){
-            Win = (computerChoice == 'paper') ? false : true;
+            result = (computerChoice == 'paper') ? false : true;
         }else if(userChoice == 'paper'){
-            Win = (computerChoice == 'scissors') ? false : true;
+            result = (computerChoice == 'scissors') ? false : true;
         }else{
-            Win = (computerChoice == 'rock') ? false : true;
+            result = (computerChoice == 'rock') ? false : true;
         }
     }
 
-    return displayLoseOrWin(Win)
+    imageChange(userChoice, computerChoice)
+    return displayLoseOrWinOrDraw(result)
+
 }
 
 //getting an array that contains all the elements under the div of class name - choice
