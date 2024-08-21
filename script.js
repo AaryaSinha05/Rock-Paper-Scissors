@@ -86,7 +86,6 @@ function playGame(userChoice){
 
     imageChange(userChoice, computerChoice)
     return displayLoseOrWinOrDraw(result)
-
 }
 
 //getting an array that contains all the elements under the div of class name - choice
