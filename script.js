@@ -8,6 +8,7 @@ var AIplayerScore = 0;
 
 //function AI player's random choice 
 function AIPlayersChoice(){
+
     const options = ['rock', 'paper', 'scissors'];
     //random no. between 0 - 3 (3 not included)
     let index = Math.floor(Math.random()*3);
@@ -27,22 +28,28 @@ function imageChange(userChoice, computerChoice) {
                 <img src="${computerChoice}-inverted.png" alt="${computerChoice}_inverted">
             </div>
         `;
-
+        
 }
 
 function displayLoseOrWinOrDraw(result){
 
     if(result == true){
+
+        //console.log("you win");
         var text = "GREAT ! You Win!";
         var color = 'green';
         playerScore += 1;
 
     }else if (result == false){
+
+        //console.log("you lose");
         var text = "You lose. It's okay - try again";
         var color = 'red';
         AIplayerScore += 1;
 
     }else {
+
+        //console.log("draw");
         var text = "Game was Draw. Play again."
         var color = 'white';
 
@@ -66,7 +73,8 @@ function displayLoseOrWinOrDraw(result){
 function playGame(userChoice){
     //play game function
     let computerChoice = AIPlayersChoice();
-    console.log(userChoice,computerChoice);
+    
+    //console.log(userChoice,computerChoice);
     
 
     var result;
@@ -86,6 +94,7 @@ function playGame(userChoice){
 
     imageChange(userChoice, computerChoice)
     return displayLoseOrWinOrDraw(result)
+
 }
 
 //getting an array that contains all the elements under the div of class name - choice
